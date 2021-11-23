@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="./assets/favicon.ico" />
+    <title>Challenge #5 on NEARvember - HELLO WORLD app</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+    <main id="signed-out-flow" style="display: none">
+        <h1>Welcome to the NFT APP!</h1>
+        <p>
+            To make use of the app, you need to sign in. The button
+            below will sign you in using NEAR Wallet.
+        </p>
+        <p>
+            The app is using to join <a href="https://nearvember.near.org/challenge-5-nft-frontend" target="_blank">Challenge #5</a> on <a href="https://nearvember.near.org" target="_blank">NEARvember</a>.
+        </p>
+        <p>
+            Go ahead and click the button below to try it out:
+        </p>
+        <p style="text-align: center; margin-top: 2.5em">
+            <button id="sign-in-button">Sign in</button>
+        </p>
+    </main>
+
+    <div id="signed-in-flow" style="display: none">
+        <button class="link" style="float: right" id="sign-out-button">
+            Sign out
+        </button>
+        <main>
+            <h1>
+                <span data-behavior="account-id"></span>!
+            </h1>
+            <div>
+                <h3>NFT Assets <span id="nftAssetNum" style="font-weight: normal;">(0)</span></h3>
+                <div style="padding-left: 20px;" id="nftAssetList"></div>
+            </div>
+            <div>
+                <h3>NFT Mint</h3>
+            </div>
+            <div style="padding-left: 20px;">
+                <div id="mintMessage" style="display:none;color:red">You are not the owner. Only owner can mint NFT!</div>
+                <form id="mintForm" style="display: none;">
+                    <fieldset id="fieldset">
+                        <label>
+                            Token ID:
+                        </label>
+                        <div style="display: flex">
+                            <input style="flex: 1" autocomplete="off" id="mint-nft-token-id" type="number" required />
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldset">
+                        <label>
+                            Receiver:
+                        </label>
+                        <div style="display: flex">
+                            <input style="flex: 1" autocomplete="off" id="mint-nft-receiver" value="daothang.testnet" required />
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldset">
+                        <label>
+                            Title:
+                        </label>
+                        <div style="display: flex">
+                            <input style="flex: 1" autocomplete="off" id="mint-nft-title" required />
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldset">
+                        <label>
+                            Media:
+                        </label>
+                        <div style="display: flex">
+                            <input style="flex: 1" autocomplete="off" id="mint-nft-media" required />
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldset">
+                        <label>
+                            Copies:
+                        </label>
+                        <div style="display: flex">
+                            <input style="flex: 1" autocomplete="off" id="mint-nft-copy" type="number" value="1" required />
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldset">
+                        <label>
+                            Description:
+                        </label>
+                        <div style="display: flex">
+                            <textarea style="flex: 1" autocomplete="off" id="mint-nft-description" rows="5" required></textarea>
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldset">
+                        <div style="display: flex; padding-top: 10px;">
+                            <button style="border-radius: 0 5px 5px 0" id="btnMintNFT">Mint NFT</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <hr>
+            <p style="text-align: center;">
+                The <b>NFT UI</b> app
+                <br /><a href="https://nearvember.near.org/challenge-5-nft-frontend" target="_blank">Challenge #5 on NEARvember</a>
+            </p>
+        </main>
+    </div>
+
+    <aside data-behavior="notification" style="display: none">
+        <a target="_blank" href="https://explorer.testnet.near.org/accounts/"></a>
+        called method: '<b>hello()</b>' in contract:
+        <a target="_blank" href="https://explorer.testnet.near.org/accounts/"></a>
+        <footer>
+            <div>✔ Succeeded</div>
+        </footer>
+    </aside>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
